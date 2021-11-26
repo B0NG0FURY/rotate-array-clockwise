@@ -1,5 +1,15 @@
 def rotate_array(arr, k)
-  # type your code in here
+  if arr.empty?
+    return arr
+  end
+
+  while k > 0
+    toFront = arr.pop()
+    arr.unshift(toFront)
+    k -= 1
+  end
+
+  arr
 end
 
 if __FILE__ == $PROGRAM_NAME

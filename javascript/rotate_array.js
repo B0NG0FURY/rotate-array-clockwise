@@ -1,5 +1,17 @@
 function rotateArray(arr, k) {
-  // type your code here
+  if (arr.length === 0) {
+    return [];
+  }
+
+  let toFront;
+
+  while (k > 0) {
+    toFront = arr.pop();
+    arr.unshift(toFront);
+    k--;
+  }
+
+  return arr;
 }
 
 if (require.main === module) {
@@ -21,4 +33,9 @@ if (require.main === module) {
 module.exports = rotateArray;
 
 // Please add your pseudocode to this file
+
+// 1. while k > 0, toFront is result of arr.pop().
+// 2. arr.unshift(toFront) and decrease k by 1.
+// 3. return arr once done looping.
+
 // And a written explanation of your solution
